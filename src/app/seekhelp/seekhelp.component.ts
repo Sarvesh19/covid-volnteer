@@ -74,7 +74,7 @@ isLinear = true;
     });
     this.secondFormGroup = this._formBuilder.group({
  		address: ['', Validators.required],
-       zip:[null, [Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1)]],
+       zip:[null, [Validators.pattern("^[0-9]*$"),Validators.min(1)]],
        cities1: [''],
        state1:['', Validators.required]
        

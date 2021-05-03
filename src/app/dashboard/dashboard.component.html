@@ -2,7 +2,12 @@
 
 <a class="btn btn-light" mat-stroked-button  style="width:100%;min-width: 160px;margin-top:10px;margin-bottom:10px;color: #007bff " routerLink="/volunteer">
 	<i style="vertical-align: baseline;" class="fas fa-angle-double-right"></i>FILL THIS FORM TO HELP OTHERS	</a>
-<div style="text-align:center;margin-top:10px;margin-bottom:10px;">SEE WHO NEED HELP NOW</div> 
+<div style="text-align:center;margin-top:10px;margin-bottom:10px;text-decoration: underline;
+    font-weight: bold;">
+<i style="vertical-align: baseline;" class="fas fa-hand-point-down"></i>
+SEE WHO NEED HELP NOW
+<i style="vertical-align: baseline;" class="fas fa-hand-point-down"></i>
+</div> 
 
 <div style="text-align: end">
 	<span><i style="vertical-align: baseline;" class="fas fa-filter"></i>Filter By State : </span> 
@@ -53,6 +58,12 @@
 
 	
 	</span>
+	<br>
+	<span *ngIf="help.description">
+		Description: 
+	<span>{{help.description}}</span>
+
+	</span>
 
 </mat-card>
 <br>
@@ -90,6 +101,12 @@
 		<span *ngIf="help.otherHelp">Other<span style="margin-left: 5px;" class="checkmark"></span></span>
 
 	
+	</span>
+	<br>
+	<span *ngIf="help.description">
+		Description: 
+			<span>{{help.description}}</span>
+
 	</span>
 
 </mat-card>

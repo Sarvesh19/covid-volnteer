@@ -37,7 +37,7 @@ SEE WHO NEED HELP NOW
 <div  *ngFor="let help of listhelpTemp">
 	
 <mat-card>
-
+	<span>Creation Time :</span><p> {{help.needHelpId.date | date:'dd-MM-yyyy hh:mm:ss a'}}</p>
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
 	<span *ngIf="help.emailId">EmailId : {{help.emailId}}<br></span>
@@ -54,9 +54,9 @@ SEE WHO NEED HELP NOW
 		<span *ngIf="help.foodSupplyHelp" style="font-weight: bold;">Food Supply<i style="color: #d41d71;" class="fas fa-check"></i></span>
 		<span *ngIf="help.financialHelp" style="font-weight: bold;">Financial<i style="color: #d41d71;" class="fas fa-check"></i></span>
 		<span *ngIf="help.bedHelp" style="font-weight: bold;">Bed<i style="color: #d41d71;" class="fas fa-check"></i></span>
-		<span *ngIf="help.plasmaHelp" style="font-weight: bold;">Plasma<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.bloodHelp" style="font-weight: bold;">Blood<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.otherHelp" style="font-weight: bold;">Other<i style="color: #d41d71;" class="fas fa-check"></i></span>
+		<span *ngIf="help.plasmaHelp" style="font-weight: bold;">Plasma<i style="color: #d41d71;" class="fas fa-check" ></i></span>
+		<span *ngIf="help.bloodHelp" style="font-weight: bold;">Blood<i style="color: #d41d71;" class="fas fa-check" ></i></span>
+		<span *ngIf="help.otherHelp" style="font-weight: bold;">Other<i style="color: #d41d71;" class="fas fa-check"></i></span> 
 
 	
 	</span>
@@ -83,7 +83,7 @@ SEE WHO NEED HELP NOW
 </div>
 <div  *ngFor="let help of listhelp">
 <mat-card>
-
+	<span>Creation Time :</span><p> {{help.needHelpId.date | date:'dd-MM-yyyy hh:mm:ss a'}}</p>
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
 	<span *ngIf="help.emailId">EmailId : {{help.emailId}}<br></span>
@@ -100,8 +100,8 @@ SEE WHO NEED HELP NOW
 		<span *ngIf="help.foodSupplyHelp" style="font-weight: bold;">Food Supply<i style="color: #d41d71;" class="fas fa-check"></i></span>
 		<span *ngIf="help.financialHelp" style="font-weight: bold;">Financial<i style="color: #d41d71;" class="fas fa-check"></i></span>
 		<span *ngIf="help.bedHelp" style="font-weight: bold;">Bed<i style="color: #d41d71;" class="fas fa-check"></i></span>
-		<span *ngIf="help.plasmaHelp" style="font-weight: bold;">Plasma<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.bloodHelp" style="font-weight: bold;">Blood<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.plasmaHelp" style="font-weight: bold;">Plasma<i style="color: #d41d71;" class="fas fa-check" ></i></span>
+		<span *ngIf="help.bloodHelp" style="font-weight: bold;">Blood<i style="color: #d41d71;" class="fas fa-check" ></i></span>
 		<span *ngIf="help.otherHelp" style="font-weight: bold;">Other<i style="color: #d41d71;" class="fas fa-check"></i></span>
 
 	

@@ -58,6 +58,9 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router, private appService: AppService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+var date = new Date('2021-05-03T16:14:21.000+00:00');
+console.info(date.toString());
+
   	this.loading = true;
  this.appService.getAllHelp().subscribe((data: any)=>{
  		this.listhelp = data;

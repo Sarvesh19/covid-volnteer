@@ -10,9 +10,9 @@ import 'rxjs/add/operator/map'
 
 export class AppService {
 
-	//private baseUri ="http://localhost:5000/";
+	private baseUri ="http://localhost:5000/";
 
-	private baseUri="https://covid-volunteer-in.herokuapp.com/" ;
+	//private baseUri="https://covid-volunteer-in.herokuapp.com/" ;
   constructor(private http: HttpClient) { }
 
 

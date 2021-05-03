@@ -7,13 +7,41 @@
 
 
 <br/>
-<div style="text-align:center;margin-top:10px;margin-bottom:10px;">List of People Helping Right Now</div> 
+<div style="text-align:center;margin-top:10px;margin-bottom:10px;">LIST OF PEOPLE HELPING RIGHT NOW</div> 
+<div style="text-align: end">
+	<span><i style="vertical-align: baseline;" class="fas fa-filter"></i>Filter By State : </span> 
+	<mat-form-field appearance="fill">
+  <mat-label>Select State</mat-label>
+  <mat-select (selectionChange)="selected($event)">
+    <mat-option *ngFor="let state of states" [value]="state">
+      {{state}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
 <mat-spinner style="margin: 0 auto;
     margin-top: 50px;" *ngIf="loading"></mat-spinner>
-<div *ngFor="let help of listhelp">
+
+
+
+
+<div *ngIf="isFilter">
+	<div *ngIf="listhelpTemp.length== 0" style="text-align: end">
+	
+    {{listhelpTemp?.length}}
+    Record Found
+</div>
+<div *ngIf="listhelpTemp  && listhelpTemp.length> 0" style="text-align: end">
+	
+    {{listhelpTemp?.length}} Record Found
+</div>
+<div  *ngFor="let help of listhelpTemp">
+	
 <mat-card>
 
-	Name : {{help.name}}<br>
+	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
+    font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
 	EmailId : {{help.emailId}}<br>
 	<span>Mobile no. {{help.mobContact}}</span><br>
 	Address: {{help.address}}
@@ -35,4 +63,43 @@
 
 </mat-card>
 <br>
+</div>
+</div>
+<div *ngIf="!isFilter">
+	<div *ngIf="listhelp.length== 0" style="text-align: end">
+	
+    {{listhelp?.length}}
+    Record Found
+</div>
+<div *ngIf="listhelp  && listhelp.length> 0" style="text-align: end">
+	
+    {{listhelp?.length}} Record Found
+</div>
+<div  *ngFor="let help of listhelp">
+<mat-card>
+
+	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
+    font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
+	EmailId : {{help.emailId}}<br>
+	<span>Mobile no. {{help.mobContact}}</span><br>
+	Address: {{help.address}}
+	State: {{help.state}} 
+	<span>
+		Zip : {{help.zip}}
+	</span>
+	<br>
+	<span>Providing Help Related to :  
+		<span *ngIf="help.oxygenHelp">Oxygen<span style="margin-left: 5px;" class="checkmark"></span></span>
+		<span *ngIf="help.medicineHelp">Medicine<span style="margin-left: 5px;" class="checkmark"></span></span>
+		<span *ngIf="help.foodSupplyHelp">Food Supply<span style="margin-left: 5px;" class="checkmark"></span></span>
+		<span *ngIf="help.financialHelp">Financial<span  style="margin-left: 5px;" class="checkmark"></span></span>
+		<span *ngIf="help.bedHelp">Bed<span style="margin-left: 5px;" class="checkmark"></span></span>
+		<span *ngIf="help.otherHelp">Other<span style="margin-left: 5px;" class="checkmark"></span></span>
+
+	
+	</span>
+
+</mat-card>
+<br>
+</div>
 </div>

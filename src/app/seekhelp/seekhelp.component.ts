@@ -130,7 +130,7 @@ isLinear = true;
 
             	console.info(data);
             	 this.loading = false;
-            	this.router.navigate(['dashboard']);
+            	this.router.navigate(['dashboard-offered-help']);
             },(error: any)=>{
             	 this.loading = false;
             	console.info(error);

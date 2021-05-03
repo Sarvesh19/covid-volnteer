@@ -8,12 +8,16 @@ import { AppService } from '../app.service';
 })
 export class DashboardOfferedHelpComponent implements OnInit {
 	listhelp : any;
+		loading: boolean =false;
+
 
   constructor(private router: Router, private appService: AppService) { }
 
   ngOnInit(): void {
+  	this.loading = true;
   	this.appService.getalloffer().subscribe((data: any)=>{
  		this.listhelp = data;
+ 		this.loading = false;
             	console.info(data);
             },(error: any)=>{
             	console.info(error);

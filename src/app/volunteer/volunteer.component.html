@@ -151,8 +151,9 @@
             </div>
 
                   <button mat-button style="background-color: #673ab7;min-width: 100px;margin-top: 5px;color: white" (click)="sumbittedForHelp()">
+                    <span *ngIf="loading">
 <span  class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-<span *ngIf="loading">
+
   Loading...
   </span>
     <span *ngIf="!loading">Submit</span>

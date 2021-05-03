@@ -63,7 +63,7 @@ isLinear = true;
     "Uttarakhand",
     "West Bengal"]
 
-    needs : any[] = ['Oxygen', 'Plasma', 'Bed', 'Medicine', 'Food', 'Financial', 'Other'];
+    needs : any[] = ['Oxygen', 'Plasma', 'Bed', 'Medicine', 'Food', 'Financial', 'Blood','Other'];
 
   constructor(private router :Router,private _formBuilder: FormBuilder, private appService: AppService,private http: HttpClient) { 
   }

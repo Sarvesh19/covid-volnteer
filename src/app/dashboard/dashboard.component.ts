@@ -73,7 +73,7 @@ console.info(date.toString());
             	console.info(error);
             });
 
-     this.openSnackBar('Please fill HELP OTHERS form to help !!','close');
+     this.openSnackBar('Please fill help others form to help !!','Close');
 
 
 

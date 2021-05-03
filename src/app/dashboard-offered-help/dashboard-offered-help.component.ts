@@ -68,7 +68,7 @@ states : any[] = [
             	console.info(error);
             });
 
-    this.openSnackBar('Please fill ASK FOR HELP form for help !!','close');
+    this.openSnackBar('Please fill ask form for help !!','Close');
 
 
   }

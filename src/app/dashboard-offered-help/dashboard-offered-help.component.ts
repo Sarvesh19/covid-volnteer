@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-dashboard-offered-help',
   templateUrl: './dashboard-offered-help.component.html',
@@ -51,7 +54,7 @@ states : any[] = [
     "Uttarakhand",
     "West Bengal"]
 
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, private appService: AppService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   	this.loading = true;
@@ -64,6 +67,10 @@ states : any[] = [
             },(error: any)=>{
             	console.info(error);
             });
+
+    this.openSnackBar('Please fill ASK FOR HELP form for help !!','close');
+
+
   }
 
    routeHome(){
@@ -82,6 +89,12 @@ states : any[] = [
   	window.open('tel:'+mobile);
 
   }
+
+  openSnackBar(message: string, action: string) {
+  this._snackBar.open(message, action, {
+      duration: 5000,
+    });  
+}
 
   
 

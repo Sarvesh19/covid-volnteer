@@ -51,7 +51,7 @@ LIST OF PEOPLE HELPING RIGHT NOW
 
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
-	EmailId : {{help.emailId}}<br>
+	<span *ngIf="help.emailId">EmailId : {{help.emailId}}<br></span>
 	<span>Mobile no. <span style="font-weight: bold;">{{help.mobContact}}</span></span><br>
 	Address: {{help.address}}
 	State: <span style="font-weight: bold;">{{help.state}}</span> 
@@ -94,7 +94,7 @@ LIST OF PEOPLE HELPING RIGHT NOW
 
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
-	EmailId : {{help.emailId}}<br>
+	<span *ngIf="help.emailId">EmailId : {{help.emailId}}<br></span>
 	<span>Mobile no. <span style="font-weight: bold;">{{help.mobContact}}</span></span><br>
 	Address: {{help.address}}
 	State: <span style="font-weight: bold;">{{help.state}} </span>

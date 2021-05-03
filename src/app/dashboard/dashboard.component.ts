@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '../app.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dashboard',
@@ -54,7 +55,7 @@ export class DashboardComponent implements OnInit {
     "West Bengal"]
 
 
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, private appService: AppService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   	this.loading = true;
@@ -68,6 +69,9 @@ export class DashboardComponent implements OnInit {
             	this.loading = false;
             	console.info(error);
             });
+
+     this.openSnackBar('Please fill HELP OTHERS form to help !!','close');
+
 
 
   }
@@ -88,5 +92,10 @@ export class DashboardComponent implements OnInit {
   	window.open('tel:'+mobile);
 
   }
+
+  openSnackBar(message: string, action: string) {
+this._snackBar.open(message, action, {
+      duration: 5000,
+    });    }
 
 }

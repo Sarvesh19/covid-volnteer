@@ -22,6 +22,7 @@ isLinear = true;
   cities: string[] = [];
   selectedCity : any;
   loading: boolean = false;
+  notValidForm: boolean = false;
 
   states : any[] = [
    "Andaman and Nicobar Islands",
@@ -81,7 +82,7 @@ isLinear = true;
    });
 
     this.thirdFormGroup= this._formBuilder.group({
- 		email: ['', [Validators.required,Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]],
+ 		email: ['', [Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]],
        contact:[null, [Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1)]]
        
 
@@ -113,6 +114,7 @@ isLinear = true;
   }
 
   sumbittedForHelp(){
+    this.notValidForm = false;
 	if(this.fourthFormGroup.valid && this.thirdFormGroup.valid && this.secondFormGroup.valid &&
 		this.firstFormGroup.valid){
 		    let user = { name: this.firstFormGroup.value.firstCtrl
@@ -140,6 +142,7 @@ isLinear = true;
         console.log("valid Form"); 
 
 	}else {
+    this.notValidForm = true;
 		return;
 	}
 	 

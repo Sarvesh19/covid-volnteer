@@ -50,7 +50,7 @@
   <mat-label>City</mat-label>
  
 
-  <mat-select  formControlName="cities1" required>
+  <mat-select  formControlName="cities1" >
     <mat-option *ngFor="let city of cities" [value]="city">
       {{city}}
     </mat-option>
@@ -79,7 +79,7 @@
       <mat-form-field style="min-width: 18rem;">
         <mat-label>Email</mat-label>
         <input  matInput formControlName="email" placeholder="xyz@gmail.com"
-               required>
+               >
 
                
       </mat-form-field>
@@ -143,6 +143,9 @@
 
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
+ <div *ngIf="notValidForm" class="alert alert-warning">
+    <strong>Warning! </strong><span >Please fill all mandatory fields</span>
+  </div>
       <div class="info">
   <p><strong>Info!</strong> After Submitting Your Help. Others can see on dashboard</p>
           

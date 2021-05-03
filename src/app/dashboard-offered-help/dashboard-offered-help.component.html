@@ -25,10 +25,14 @@ LIST OF PEOPLE HELPING RIGHT NOW
 </mat-form-field>
 </div>
 
+<!-- <div class="demo"></div>
+ -->
+
 <mat-spinner style="margin: 0 auto;
-    margin-top: 50px;" *ngIf="loading"></mat-spinner>
+    margin-top: 50px;margin-bottom: 20%;" *ngIf="loading"></mat-spinner>
 
 
+<div  *ngFor="let help of listhelpTemp">
 
 
 <div *ngIf="isFilter">
@@ -41,32 +45,32 @@ LIST OF PEOPLE HELPING RIGHT NOW
 	
     {{listhelpTemp?.length}} Record Found
 </div>
-<div  *ngFor="let help of listhelpTemp">
-	
+
+
 <mat-card>
 
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
 	EmailId : {{help.emailId}}<br>
-	<span>Mobile no. {{help.mobContact}}</span><br>
+	<span>Mobile no. <span style="font-weight: bold;">{{help.mobContact}}</span></span><br>
 	Address: {{help.address}}
-	State: {{help.state}} 
+	State: <span style="font-weight: bold;">{{help.state}}</span> 
 	<span>
 		Zip : {{help.zip}}
 	</span>
 	<br>
 	<span>Providing Help Related to :  
-		<span *ngIf="help.oxygenHelp">Oxygen<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.medicineHelp">Medicine<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.foodSupplyHelp">Food Supply<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.financialHelp">Financial<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.bedHelp">Bed<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.otherHelp">Other<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.oxygenHelp" style="font-weight: bold;">Oxygen<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.medicineHelp" style="font-weight: bold;">Medicine<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.foodSupplyHelp" style="font-weight: bold;">Food Supply<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.financialHelp" style="font-weight: bold;">Financial<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.bedHelp" style="font-weight: bold;">Bed<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.otherHelp" style="font-weight: bold;">Other<i class="fas fa-check" style="color: green"></i></span>
 
 	<br>
 	</span>
 		<span *ngIf="help.description">
-		Description: 
+		<span style="font-weight: bold;">Description: </span>
 			<span>{{help.description}}</span>
 
 	</span>
@@ -91,25 +95,25 @@ LIST OF PEOPLE HELPING RIGHT NOW
 	Name : {{help.name}} <span><i class="fas fa-phone-alt" style="float: right;
     font-size: 21px;cursor: pointer;" aria-hidden="true" (click)="callNow(help.mobContact)"></i></span><br>
 	EmailId : {{help.emailId}}<br>
-	<span>Mobile no. {{help.mobContact}}</span><br>
+	<span>Mobile no. <span style="font-weight: bold;">{{help.mobContact}}</span></span><br>
 	Address: {{help.address}}
-	State: {{help.state}} 
+	State: <span style="font-weight: bold;">{{help.state}} </span>
 	<span>
 		Zip : {{help.zip}}
 	</span>
 	<br>
 	<span>Providing Help Related to :  
-		<span *ngIf="help.oxygenHelp">Oxygen<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.medicineHelp">Medicine<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.foodSupplyHelp">Food Supply<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.financialHelp">Financial<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.bedHelp">Bed<i class="fas fa-check" style="color: green"></i></span>
-		<span *ngIf="help.otherHelp">Other<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.oxygenHelp" style="font-weight: bold;">Oxygen<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.medicineHelp" style="font-weight: bold;">Medicine<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.foodSupplyHelp" style="font-weight: bold;">Food Supply<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.financialHelp" style="font-weight: bold;">Financial<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.bedHelp" style="font-weight: bold;">Bed<i class="fas fa-check" style="color: green"></i></span>
+		<span *ngIf="help.otherHelp" style="font-weight: bold;">Other<i class="fas fa-check" style="color: green"></i></span>
 
 	<br>
 	</span>
 		<span *ngIf="help.description">
-		Description: 
+		<span style="font-weight: bold;">Description: </span>
 			<span>{{help.description}}</span>
 
 	</span>

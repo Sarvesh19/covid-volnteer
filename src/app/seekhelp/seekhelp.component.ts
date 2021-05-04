@@ -69,30 +69,32 @@ isLinear = true;
   }
   ngOnInit(): void {
 
-  	this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
+  	// this.firstFormGroup = this._formBuilder.group({
+      
+   //  });
     this.secondFormGroup = this._formBuilder.group({
- 		address: ['', Validators.required],
+       firstCtrl: ['', Validators.required],
+ 		   address: ['', Validators.required],
        zip:[null, [Validators.pattern("^[0-9]*$"),Validators.min(1)]],
        cities1: [''],
-       state1:['', Validators.required]
-       
-
-   });
-
-    this.thirdFormGroup= this._formBuilder.group({
- 		email: ['', [Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]],
-       contact:[null, [Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1)]]
-       
-
-   });
-
-     this.fourthFormGroup= this._formBuilder.group({
- 		needs1: ['', Validators.required],
+       state1:['', Validators.required],
+       email: ['', [Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]],
+       contact:[null, [Validators.required,Validators.pattern("^[0-9]*$"),Validators.min(1)]],
+       needs1: ['', Validators.required],
        description: ['', Validators.required]
 
    });
+
+   //  this.thirdFormGroup= this._formBuilder.group({
+ 		
+       
+
+   // });
+
+   //   this.fourthFormGroup= this._formBuilder.group({
+ 		
+
+   // });
 
     
 
@@ -115,17 +117,16 @@ isLinear = true;
 
   sumbittedForHelp(){
     this.notValidForm = false;
-	if(this.fourthFormGroup.valid && this.thirdFormGroup.valid && this.secondFormGroup.valid &&
-		this.firstFormGroup.valid){
-		    let user = { name: this.firstFormGroup.value.firstCtrl
+	if(this.secondFormGroup.valid){
+		    let user = { name: this.secondFormGroup.value.firstCtrl
            , address: this.secondFormGroup.value.address,
 			city: this.secondFormGroup.value.cities1,
 			zip: this.secondFormGroup.value.zip,
 			state: this.secondFormGroup.value.state1,
-			mobContact: this.thirdFormGroup.value.contact,
-			email: this.thirdFormGroup.value.email,
-			listNeeds: this.fourthFormGroup.value.needs1,
-			description : this.fourthFormGroup.value.description
+			mobContact: this.secondFormGroup.value.contact,
+			email: this.secondFormGroup.value.email,
+			listNeeds: this.secondFormGroup.value.needs1,
+			description : this.secondFormGroup.value.description
             };
             this.loading = true;
             this.appService.seekHelp(user).subscribe((data: any)=>{

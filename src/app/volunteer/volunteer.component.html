@@ -4,21 +4,15 @@
 <h2 class="display-4" style="font-size: 39px;">HELP SOMEONE NOW</h2>
     <hr class="my-4">
 <mat-vertical-stepper [linear]="!isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+   
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out form</ng-template>
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <br>
       <mat-form-field style="min-width: 18rem;">
         <mat-label>Address</mat-label>
         <input  matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY"
@@ -58,25 +52,7 @@
 </mat-form-field>
 </div>
 
-
-
-      <!-- <mat-form-field appearance="fill">
-  <mat-label>Toppings</mat-label>
-  <mat-select [formControl]="toppings" multiple>
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field> -->
-
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-<mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel>Fill out your Contact</ng-template>
-      <mat-form-field style="min-width: 18rem;">
+ <mat-form-field style="min-width: 18rem;">
         <mat-label>Email</mat-label>
         <input  matInput formControlName="email" placeholder="xyz@gmail.com"
                >
@@ -92,58 +68,22 @@
         </mat-form-field>
       </div>
 
-   
 
 
-      <!-- <mat-form-field appearance="fill">
-  <mat-label>Toppings</mat-label>
-  <mat-select [formControl]="toppings" multiple>
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field> -->
-
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup">
-      <ng-template matStepLabel>Select Needs</ng-template>
-       <mat-form-field appearance="fill">
+<mat-form-field appearance="fill">
   <mat-label>Needs</mat-label>
   <mat-select formControlName="needs1" multiple>
     <mat-option *ngFor="let need of needs" [value]="need">{{need}}</mat-option>
   </mat-select>
 </mat-form-field>
-      <div>
-<mat-form-field class="example-full-width">
+      <div style="width: 200%">
+<mat-form-field style="width:100%" class="example-full-width">
     <mat-label>Description</mat-label>
     <textarea matInput formControlName="description"></textarea>
   </mat-form-field>
    </div>
 
-
-      <!-- <mat-form-field appearance="fill">
-  <mat-label>Toppings</mat-label>
-  <mat-select [formControl]="toppings" multiple>
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field> -->
-
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
- <div *ngIf="notValidForm" class="alert alert-warning">
+<div *ngIf="notValidForm" class="alert alert-warning">
     <strong>Warning! </strong><span >Please fill all mandatory fields</span>
   </div>
       <div class="info">
@@ -161,11 +101,17 @@
   </span>
     <span *ngIf="!loading">Submit</span>
                   </button>
+    </form>
+
+  </mat-step>
+
+
+
+ 
     <!-- <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
     </div> -->
-  </mat-step>
 </mat-vertical-stepper>
 </div>
 
